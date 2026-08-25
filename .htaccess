@@ -1,0 +1,15 @@
+RewriteEngine On
+
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ / [L,R=301]
+
+RewriteCond %{THE_REQUEST} /projetos\.html [NC]
+RewriteRule ^(.*)projetos\.html$ /projetos [L,R=301]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^projetos$ projetos.html [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^home$ index.html [L]
