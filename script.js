@@ -15,28 +15,28 @@ const FALLBACK_REAL_PROJECTS = [
         description: "Portfólio profissional de Engenharia Front-End com arquitetura Vanilla Web Stack, alta performance, Design System modular, integração com GitHub REST API e conformidade com Core Web Vitals.",
         homepage: "https://rubenmassuquetto.com/",
         html_url: "https://github.com/rubenmassuquetto1999/ruben-massuquetto-site",
-        previewImage: "./assets/screenshots/ruben-massuquetto-site.png"
+        previewImage: "./assets/screenshots/ruben-massuquetto-site.webp"
     },
     {
         name: "site-mkt-massuquetto",
         description: "Site institucional da MKT Massuquetto. Agência de marketing digital especializada em tráfego pago (Google/Meta Ads), criação de sites de alta conversão, SEO local e branding.",
         homepage: "https://mktmassuquetto.com/",
         html_url: "https://github.com/rubenmassuquetto1999/site-mkt-massuquetto",
-        previewImage: "./assets/screenshots/site-mkt-massuquetto.png"
+        previewImage: "./assets/screenshots/site-mkt-massuquetto.webp"
     },
     {
         name: "site-metodo-antiprotelacao",
         description: "Landing page oficial do Método Antiprotelação, um treinamento focado em produtividade e quebra de procrastinação. Desenvolvido com HTML, CSS e JavaScript puro.",
         homepage: "https://metodoantiprotelacao.com/",
         html_url: "https://github.com/rubenmassuquetto1999/site-metodo-antiprotelacao",
-        previewImage: "./assets/screenshots/site-metodo-antiprotelacao.png"
+        previewImage: "./assets/screenshots/site-metodo-antiprotelacao.webp"
     },
     {
         name: "mario-bros-landing-page",
         description: "Landing page temática e imersiva do Mario Bros construída no padrão Single Page Application (SPA), contando com vídeo interativo de fundo e formulário integrado de conversão.",
         homepage: "https://rubenmassuquetto1999.github.io/mario-bros-landing-page/",
         html_url: "https://github.com/rubenmassuquetto1999/mario-bros-landing-page",
-        previewImage: "./assets/screenshots/mario-bros-landing-page.png"
+        previewImage: "./assets/screenshots/mario-bros-landing-page.webp"
     },
     {
         name: "Monitor-de-Energia-Faturas-IA",
@@ -64,23 +64,23 @@ const FALLBACK_REAL_PROJECTS = [
         description: "Gerador inteligente de componentes HTML/CSS que transforma descrições em código funcional utilizando IA (Llama 3 via Groq API). Interface moderna com Glassmorphism e Preview em tempo real.",
         homepage: "https://ai-css-generator.ai.studio",
         html_url: "https://github.com/rubenmassuquetto1999/ai-css-generator",
-        previewImage: "./assets/screenshots/ai-css-generator.png"
+        previewImage: "./assets/screenshots/ai-css-generator.webp"
     }
 ];
 
 // Associa o print/screenshot real capturado do site armazenado localmente
 function getRepoPreviewImage(repoName) {
     const key = (repoName || '').toLowerCase().replace(/_/g, '-');
-    if (key.includes("ruben-massuquetto") || key.includes("rubenmassuquetto") || key.includes("portfolio")) return "./assets/screenshots/ruben-massuquetto-site.png";
-    if (key.includes("mario")) return "./assets/screenshots/mario-bros-landing-page.png";
-    if (key.includes("mkt")) return "./assets/screenshots/site-mkt-massuquetto.png";
-    if (key.includes("metodo") || key.includes("procrastinacao") || key.includes("antiprotelacao")) return "./assets/screenshots/site-metodo-antiprotelacao.png";
-    if (key.includes("css")) return "./assets/screenshots/ai-css-generator.png";
+    if (key.includes("ruben-massuquetto") || key.includes("rubenmassuquetto") || key.includes("portfolio")) return "./assets/screenshots/ruben-massuquetto-site.webp";
+    if (key.includes("mario")) return "./assets/screenshots/mario-bros-landing-page.webp";
+    if (key.includes("mkt")) return "./assets/screenshots/site-mkt-massuquetto.webp";
+    if (key.includes("metodo") || key.includes("procrastinacao") || key.includes("antiprotelacao")) return "./assets/screenshots/site-metodo-antiprotelacao.webp";
+    if (key.includes("css")) return "./assets/screenshots/ai-css-generator.webp";
     if (key.includes("energia") || key.includes("fatura")) return "./assets/screenshots/monitor-de-energia-faturas-ia.png";
     if (key.includes("financeiro")) return "./assets/screenshots/controle-financeiro-pessoal.png";
     if (key.includes("ibge") || key.includes("aor")) return "./assets/screenshots/aor-master-ibge-focus.png";
     if (key.includes("tempo")) return "./assets/screenshots/previsao-do-tempo-app.png";
-    return `./assets/screenshots/${key}.png`;
+    return `./assets/screenshots/${key}.webp`;
 }
 
 // Normaliza o identificador do projeto para indexação de tradução
@@ -166,12 +166,11 @@ function renderProjects(projects, container) {
                 <div class="project-preview-img-container">
                     <img src="${previewImg}" 
                          alt="Captura real do site ${title}" 
-                         loading="eager" 
-                         fetchpriority="high" 
+                         loading="lazy" 
                          class="project-preview-img" 
                          width="1280" 
                          height="760"
-                         onerror="this.onerror=null; this.src='./assets/screenshots/ruben-massuquetto-site.png';">
+                         onerror="this.onerror=null; this.src='./assets/screenshots/ruben-massuquetto-site.webp';">
                 </div>
             </div>
 

@@ -553,10 +553,10 @@ section {
   color: var(--accent-neon);
   background: var(--accent-neon-dim);
   border: 1px solid rgba(0, 245, 155, 0.25);
-  padding: 5px 14px;
+  padding: 8px 18px;
   border-radius: var(--radius-pill);
   margin-bottom: 16px;
-  letter-spacing: 0.03em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
@@ -732,8 +732,9 @@ nav#main-menu ul li a:hover::after {
 
 .theme-toggle-btn:hover {
   background: var(--bg-surface-elevated);
-  color: var(--text-primary);
   border-color: var(--border-active);
+  color: var(--accent-neon);
+  box-shadow: 0 0 10px var(--accent-neon-glow);
 }
 
 .theme-toggle-btn svg {
@@ -2645,9 +2646,7 @@ footer {
   }
 
   .section-tag {
-    font-size: 0.6875rem;
-    padding: 4px 10px;
-    margin-bottom: 10px;
+    display: none !important;
   }
 
   .hero-impact-title {
