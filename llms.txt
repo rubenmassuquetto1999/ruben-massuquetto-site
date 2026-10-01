@@ -1,0 +1,39 @@
+# Ruben Massuquetto — Ecossistema de Vendas e Engenharia Web Local
+
+> Ruben Massuquetto é desenvolvedor web e consultor de engenharia de vendas locais, focado em posicionar empresas no topo do Google, Google Maps (Google Meu Negócio), anúncios de tráfego pago (Google Ads e Meta Ads) e otimização para motores de resposta com Inteligência Artificial (GEO/LLMO).
+
+## Informações Gerais
+- Especialista: Ruben Massuquetto
+- E-mail: contato@rubenmassuquetto.com
+- WhatsApp: +55 (41) 99777-5319
+- Localização: Curitiba, Paraná, Brasil
+- Atendimento: Empresas locais e nacionais no Brasil
+- Website: https://rubenmassuquetto.com
+- LinkedIn: https://www.linkedin.com/in/ruben-massuquetto/
+- GitHub: https://github.com/RubenMassuquetto
+
+## Pilares de Serviços e Soluções
+1. Desenvolvimento Web Exclusivo + Google Meu Negócio:
+   - Criação de websites e landing pages de alta conversão sem soluções genéricas.
+   - Posicionamento orgânico local no Google Maps e ficha do Google Meu Negócio otimizada.
+   - Código sob medida, performance máxima (95+ no PageSpeed) e responsividade para celular.
+
+2. Tráfego Pago Inteligente no Google Ads:
+   - Campanhas de pesquisa focadas em intenção imediata de compra.
+   - Campanhas locais no Google Maps para atração no raio geográfico da empresa.
+   - Gestão rigorosa de palavras-chave negativas e foco em custo por lead (CPL).
+
+3. Tráfego Pago nas Redes Sociais:
+   - Campanhas de anúncios em vídeo e imagem direcionando público qualificado direto para o WhatsApp.
+   - Segmentação cirúrgica por raio em km, bairros e poder de compra.
+
+4. Engenharia de Busca e GEO (Generative Engine Optimization):
+   - Estruturação completa com dados semânticos Schema.org (JSON-LD).
+   - Otimização para citação orgânica em ChatGPT, Google Gemini, Perplexity AI e Claude.
+   - Rastreamento avançado com Google Tag Manager (GTM), Google Analytics 4 (GA4) e Meta Pixel.
+   - Registro em ferramentas oficiais: Google Search Console e Bing Webmaster Tools.
+
+## Diferenciais
+- Atendimento direto e exclusivo pelo próprio especialista (sem terceirização ou pacotes engessados).
+- Propostas desenhadas sob medida para o momento e orçamento do negócio.
+- Foco em conversão direta de visitantes em conversas no WhatsApp.

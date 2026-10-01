@@ -2,23 +2,94 @@
 <html lang="pt-br">
 
 <head>
+    <!-- Google Consent Mode v2 Default Settings -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      var savedConsent = null;
+      try {
+        savedConsent = JSON.parse(localStorage.getItem('ruben_cookie_consent_v2'));
+      } catch (e) {}
+
+      if (savedConsent) {
+        gtag('consent', 'default', {
+          'ad_storage': savedConsent.ad_storage || 'denied',
+          'analytics_storage': savedConsent.analytics_storage || 'denied',
+          'ad_user_data': savedConsent.ad_user_data || 'denied',
+          'ad_personalization': savedConsent.ad_personalization || 'denied',
+          'wait_for_update': 500
+        });
+      } else {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'wait_for_update': 500
+        });
+      }
+
+      // Ativa transferência de cliques (URL Passthrough) e redução de dados de anúncios (Ads Data Redaction)
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QET12YVJEF"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-QET12YVJEF');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1544310170830189');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1544310170830189&ev=PageView&noscript=1"
+    alt="Meta Pixel" /></noscript>
+    <!-- End Meta Pixel Code -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Todos os projetos e repositórios de Ruben Massuquetto: Interfaces Front-End, Sistemas Web e Aplicações Analíticas.">
-    <title>Projetos & Repositórios | Ruben Massuquetto</title>
+        content="Portfólio de Engenharia Ativa e Demonstrações de Performance: Soluções exclusivas sob medida para empresas locais, alta velocidade e prontidão para IA.">
+    <title>Portfólio de Engenharia Ativa | Demonstrações de Performance | Ruben Massuquetto</title>
     
+    <!-- Pré-carregamento dos Prints Reais dos Sites dos Projetos -->
+    <link rel="preload" as="image" href="./screenshots/monitor-de-energia-faturas-ia.png">
+    <link rel="preload" as="image" href="./screenshots/controle-financeiro-pessoal.png">
+    <link rel="preload" as="image" href="./screenshots/aor-master-ibge-focus.png">
+    <link rel="preload" as="image" href="./screenshots/site-mkt-massuquetto.png">
+    <link rel="preload" as="image" href="./screenshots/ruben-massuquetto-site.png">
+
     <!-- Google Fonts: Inter & JetBrains Mono -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
     
-    <!-- Early Init: Fetch Compatibility & Theme Auto Init (Zero Flash) -->
+    <!-- Script de Tradução Nativa Multilíngue (PT-BR, EN, ES) -->
+    <script src="./translations.js"></script>
+
+    <!-- Early Init: Fetch Compatibility, Scroll to Top, Theme & Language Auto Init (Zero Flash) -->
     <script>
         (function() {
+            // Garante abertura estrita no topo absoluto da página (evita abrir no meio)
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+
             try {
                 if (window.fetch) {
                     var _origFetch = window.fetch.bind(window);
@@ -33,9 +104,36 @@
             } catch (err) {}
 
             try {
-                var stored = localStorage.getItem('ruben_portfolio_theme');
-                var theme = stored ? stored : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                var storedTheme = localStorage.getItem('ruben_portfolio_theme');
+                var theme = storedTheme ? storedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
                 document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+
+            // Detecção prévia de idioma para visitantes internacionais (gringos)
+            try {
+                var urlParams = new URLSearchParams(window.location.search);
+                var langParam = (urlParams.get('lang') || '').toLowerCase();
+                var storedLang = localStorage.getItem('preferred_language');
+                var activeLang = 'pt';
+
+                if (['pt', 'en', 'es'].indexOf(langParam) !== -1) {
+                    activeLang = langParam;
+                } else if (['pt', 'en', 'es'].indexOf(storedLang) !== -1) {
+                    activeLang = storedLang;
+                } else {
+                    var navLangs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+                    for (var i = 0; i < navLangs.length; i++) {
+                        var l = (navLangs[i] || '').toLowerCase();
+                        if (l.indexOf('pt') === 0) { activeLang = 'pt'; break; }
+                        if (l.indexOf('es') === 0) { activeLang = 'es'; break; }
+                        if (l.indexOf('en') === 0) { activeLang = 'en'; break; }
+                    }
+                    if (['pt', 'es'].indexOf(activeLang) === -1) {
+                        activeLang = 'en'; // Visitante estrangeiro ("gringo") padrão: Inglês!
+                    }
+                }
+                var htmlLangMap = { pt: 'pt-BR', en: 'en', es: 'es' };
+                document.documentElement.lang = htmlLangMap[activeLang] || 'pt-BR';
             } catch (e) {}
         })();
     </script>
@@ -45,25 +143,55 @@
     <!-- Top Minimal Navigation -->
     <header id="header-nav">
         <div class="nav-container">
-            <a href="index.html" class="logo-nav" id="brand-logo">
-                <span class="logo-bracket">&lt;</span>
-                Massuquetto
-                <span class="logo-bracket">/&gt;</span>
-                <span class="logo-dot"></span>
+            <a href="index.html" class="logo-nav" id="brand-logo" aria-label="Ruben Massuquetto - Ir para o início" data-i18n-aria="nav.brandAria">
+                <span class="logo-main-text">
+                    Massuquetto
+                    <span class="logo-accent-dot"></span>
+                </span>
             </a>
             
             <nav id="main-menu" aria-label="Navegação Principal">
                 <ul>
-                    <li><a href="index.html#hero">Home</a></li>
-                    <li><a href="index.html#projetos">Destaques</a></li>
-                    <li><a href="index.html#tecnologias">Tecnologias</a></li>
-                    <li><a href="index.html#contato">Contato</a></li>
+                    <li><a href="index.html#hero" data-i18n="nav.home">Início</a></li>
+                    <li><a href="index.html#servicos" data-i18n="nav.solutions">Nossas Soluções</a></li>
+                    <li><a href="index.html#como-funciona" data-i18n="nav.howItWorks">Como Funciona</a></li>
+                    <li><a href="index.html#projetos" data-i18n="nav.demos">Demonstrações</a></li>
+                    <li><a href="index.html#contato" data-i18n="nav.diagnostic">Diagnóstico</a></li>
                 </ul>
             </nav>
 
             <div class="nav-actions">
-                <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alternar modo claro e escuro" title="Alternar modo claro / escuro">
-                    <!-- Sun icon for dark mode (click to switch to light) -->
+                <!-- Seletor Nativo de Idioma em Lista (Bolinha Circular com Abreviatura + Dropdown) -->
+                <div class="lang-dropdown-wrapper" id="lang-dropdown-wrapper">
+                    <button type="button" 
+                            class="lang-circle-btn" 
+                            id="lang-dropdown-btn" 
+                            aria-expanded="false" 
+                            aria-haspopup="listbox" 
+                            aria-label="Selecionar Idioma" 
+                            title="Selecionar Idioma / Language">
+                        <span class="lang-current-code" id="lang-current-code">PT</span>
+                    </button>
+                    <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="listbox" aria-label="Idiomas disponíveis">
+                        <button type="button" class="lang-dropdown-item is-active" data-lang="pt" role="option" aria-selected="true">
+                            <span class="lang-item-flag">🇧🇷</span>
+                            <span class="lang-item-name">Português</span>
+                            <span class="lang-item-code">PT</span>
+                        </button>
+                        <button type="button" class="lang-dropdown-item" data-lang="en" role="option" aria-selected="false">
+                            <span class="lang-item-flag">🇺🇸</span>
+                            <span class="lang-item-name">English</span>
+                            <span class="lang-item-code">EN</span>
+                        </button>
+                        <button type="button" class="lang-dropdown-item" data-lang="es" role="option" aria-selected="false">
+                            <span class="lang-item-flag">🇪🇸</span>
+                            <span class="lang-item-name">Español</span>
+                            <span class="lang-item-code">ES</span>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="button" id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Alternar modo claro e escuro" title="Alternar modo de iluminação">
                     <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
                         <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -75,19 +203,18 @@
                         <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
-                    <!-- Moon icon for light mode (click to switch to dark) -->
                     <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
                 </button>
 
-                <a href="/cv/cv-ruben-massuquetto.pdf" download="cv-ruben-massuquetto.pdf" target="_blank" rel="noopener noreferrer" class="btn-cv" id="nav-btn-cv">
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                        <polyline points="7 10 12 15 17 10"></polyline>
-                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                <a href="index.html#contato" class="btn-nav-cta" id="nav-btn-diagnostic" title="Solicitar Diagnóstico">
+                    <span class="nav-cta-text-full" data-i18n="nav.diagnosticBtn">Solicitar Diagnóstico</span>
+                    <span class="nav-cta-text-short" data-i18n="nav.diagnostic">Diagnóstico</span>
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
-                    <span class="btn-cv-text">Download CV</span>
                 </a>
 
                 <button type="button" id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="mobile-nav-drawer">
@@ -102,41 +229,43 @@
         <div id="mobile-nav-drawer" class="mobile-nav-drawer" aria-hidden="true">
             <nav class="mobile-nav-menu">
                 <ul>
-                    <li><a href="index.html#hero" class="mobile-nav-link">Home</a></li>
-                    <li><a href="index.html#projetos" class="mobile-nav-link">Destaques</a></li>
-                    <li><a href="index.html#tecnologias" class="mobile-nav-link">Tecnologias</a></li>
-                    <li><a href="index.html#contato" class="mobile-nav-link">Contato</a></li>
+                    <li><a href="index.html#hero" class="mobile-nav-link" data-i18n="nav.home">Início</a></li>
+                    <li><a href="index.html#servicos" class="mobile-nav-link" data-i18n="nav.solutions">Nossas Soluções</a></li>
+                    <li><a href="index.html#como-funciona" class="mobile-nav-link" data-i18n="nav.howItWorks">Como Funciona</a></li>
+                    <li><a href="index.html#projetos" class="mobile-nav-link" data-i18n="nav.demos">Demonstrações</a></li>
+                    <li><a href="index.html#contato" class="mobile-nav-link" data-i18n="nav.diagnostic">Solicitar Diagnóstico</a></li>
                 </ul>
                 <div class="mobile-nav-footer">
-                    <a href="/cv/cv-ruben-massuquetto.pdf" download="cv-ruben-massuquetto.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary mobile-cv-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                            <polyline points="7 10 12 15 17 10"></polyline>
-                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                    <a href="index.html#contato" class="btn btn-primary mobile-cta-btn" data-i18n="nav.diagnosticMobileBtn">
+                        Solicitar Diagnóstico Gratuito
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
                         </svg>
-                        Baixar Currículo PDF
                     </a>
                 </div>
             </nav>
         </div>
     </header>
 
-    <main style="padding-top: calc(var(--header-height) + 40px); min-height: 80vh;">
-        <!-- Seção Todos os Projetos -->
+    <main class="projetos-page-main">
+        <!-- Seção Demonstrações de Performance -->
         <section id="projetos" style="border-top: none;">
             <div class="container">
                 <div class="section-header fade-in-section">
-                    <a href="index.html" style="display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent-cyan); margin-bottom: 16px;">
+                    <a href="index.html" class="projetos-back-link">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <line x1="19" y1="12" x2="5" y2="12"></line>
                             <polyline points="12 19 5 12 12 5"></polyline>
                         </svg>
-                        Voltar para a Home
+                        <span data-i18n="projetosPage.backLink">Voltar para Página Inicial</span>
                     </a>
                     <br>
-                    <span class="section-tag">REPOSITÓRIOS_GITHUB</span>
-                    <h1 class="section-title">Todos os Projetos & Experimentos</h1>
-                    <p class="section-subtitle">Lista completa de repositórios públicos sincronizados diretamente com a API do GitHub.</p>
+                    <span class="section-tag" data-i18n="projetosPage.tag">PROJETOS REAIS EM FUNCIONAMENTO</span>
+                    <h1 class="section-title" data-i18n="projetosPage.title">Soluções Reais no Ar: Projetos que Geram Vendas e Atraem Clientes</h1>
+                    <p class="section-subtitle" data-i18n="projetosPage.subtitle">
+                        Relação completa de sistemas, landing pages e ferramentas desenvolvidas sob medida para negócios. Conheça a agilidade de navegação, o design de alta conversão e a estrutura comercial aplicada para captar clientes todos os dias.
+                    </p>
                 </div>
 
                 <!-- Bento Grid Container for All GitHub Repos -->
@@ -148,26 +277,34 @@
     <!-- FOOTER -->
     <footer>
         <div class="container footer-content">
-            <div class="footer-links-row">
-                <a href="https://www.linkedin.com/in/ruben-massuquetto/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/rubenmassuquetto1999" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="https://wa.me/5541997775319" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-                <a href="mailto:rubenmassuquetto1999@gmail.com">E-mail</a>
-                <a href="/cv/cv-ruben-massuquetto.pdf" download="cv-ruben-massuquetto.pdf" target="_blank" rel="noopener noreferrer">Currículo PDF</a>
+            <div class="footer-logo" data-i18n="footer.logo">
+                Ruben Massuquetto · Ecossistema de Vendas Locais
             </div>
-            <p class="footer-copy">
-                © 2026 Ruben Massuquetto | Todos os direitos reservados
+            <div class="footer-links-row">
+                <a href="index.html#hero" data-i18n="footer.home">Início</a>
+                <a href="index.html#servicos" data-i18n="footer.solutions">Soluções Sob Medida</a>
+                <a href="index.html#como-funciona" data-i18n="footer.howItWorks">Como Funciona</a>
+                <a href="index.html#projetos" data-i18n="footer.demos">Demonstrações Ativas</a>
+                <a href="index.html#contato" data-i18n="footer.contact">Solicitar Diagnóstico</a>
+                <a href="privacidade.html" style="color: var(--accent-neon); font-weight: 600;" data-i18n="contact.consentLink">Política de Privacidade</a>
+                <a href="https://wa.me/5541997775319" target="_blank" rel="noopener noreferrer" data-i18n="footer.whatsapp">WhatsApp</a>
+            </div>
+            <p class="footer-copy" data-i18n="footer.copy">
+                © 2026 Ruben Massuquetto | Todos os direitos reservados · Estratégias sob medida para empresas locais.
             </p>
         </div>
     </footer>
 
-    <!-- Minimal Floating WhatsApp Quick Contact -->
-    <a href="https://wa.me/5541997775319?text=Ol%C3%A1%20Ruben!%20Vi%20seus%20projetos%20e%20gostaria%20de%20conversar."
-        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Fale comigo no WhatsApp" id="whatsapp-floating-cta">
-        <svg viewBox="0 0 24 24">
-            <title>WhatsApp</title>
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
-        </svg>
+    <!-- BOTÃO FLUTUANTE PERSISTENTE DO WHATSAPP ("Falar com Especialista") -->
+    <a href="https://wa.me/5541997775319?text=Ol%C3%A1%20Ruben!%20Gostaria%20de%20falar%20com%20o%20especialista%20sobre%20um%20diagn%C3%B3stico%20de%20vendas%20para%20minha%20empresa."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Especialista no WhatsApp" id="whatsapp-floating-cta">
+        <span class="whatsapp-icon-circle">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </span>
+        <span class="whatsapp-float-label" data-i18n="floatingWpp.label">Falar com Especialista</span>
+        <span class="whatsapp-pulse-beacon"></span>
     </a>
 
     <!-- Scripts -->

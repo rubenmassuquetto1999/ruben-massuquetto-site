@@ -1,0 +1,54 @@
+# robots.txt para https://rubenmassuquetto.com
+# Permite rastreamento completo por motores de busca tradicionais e IAs generativas
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /node_modules/
+
+# Rastreadores Oficiais de Motores de Busca
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Rastreadores Oficiais de Inteligência Artificial (GEO / LLMO)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Mapa do Site e Dados para IAs
+Sitemap: https://rubenmassuquetto.com/sitemap.xml

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <!-- Google Consent Mode v2 Default Settings -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      
+      var savedConsent = null;
+      try {
+        savedConsent = JSON.parse(localStorage.getItem('ruben_cookie_consent_v2'));
+      } catch (e) {}
+
+      if (savedConsent) {
+        gtag('consent', 'default', {
+          'ad_storage': savedConsent.ad_storage || 'denied',
+          'analytics_storage': savedConsent.analytics_storage || 'denied',
+          'ad_user_data': savedConsent.ad_user_data || 'denied',
+          'ad_personalization': savedConsent.ad_personalization || 'denied',
+          'wait_for_update': 500
+        });
+      } else {
+        gtag('consent', 'default', {
+          'ad_storage': 'denied',
+          'analytics_storage': 'denied',
+          'ad_user_data': 'denied',
+          'ad_personalization': 'denied',
+          'wait_for_update': 500
+        });
+      }
+
+      // Ativa transferência de cliques (URL Passthrough) e redução de dados de anúncios (Ads Data Redaction)
+      gtag('set', 'url_passthrough', true);
+      gtag('set', 'ads_data_redaction', true);
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QET12YVJEF"></script>
+    <script>
+      gtag('js', new Date());
+      gtag('config', 'G-QET12YVJEF');
+    </script>
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1544310170830189');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1544310170830189&ev=PageView&noscript=1"
+    alt="Meta Pixel" /></noscript>
+    <!-- End Meta Pixel Code -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Política de Privacidade, Termos de Uso e conformidade legal (LGPD) de Ruben Massuquetto. Informações detalhadas sobre proteção de dados, rastreio ético e canais de contato DPO.">
+    <title>Política de Privacidade & Conformidade Digital (LGPD) | Ruben Massuquetto</title>
+
+    <!-- Google Fonts: Inter & JetBrains Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/png">
+    
+    <!-- Script de Tradução Nativa Multilíngue (PT-BR, EN, ES) -->
+    <script src="./translations.js"></script>
+
+    <!-- Early Init: Fetch Compatibility, Scroll to Top, Theme & Language Auto Init (Zero Flash) -->
+    <script>
+        (function() {
+            if ('scrollRestoration' in history) {
+                history.scrollRestoration = 'manual';
+            }
+            window.scrollTo(0, 0);
+
+            try {
+                if (window.fetch) {
+                    var _origFetch = window.fetch.bind(window);
+                    var _currentFetch = _origFetch;
+                    Object.defineProperty(window, 'fetch', {
+                        get: function() { return _currentFetch; },
+                        set: function(val) { _currentFetch = val; },
+                        configurable: true,
+                        enumerable: true
+                    });
+                }
+            } catch (err) {}
+
+            try {
+                var storedTheme = localStorage.getItem('ruben_portfolio_theme');
+                var theme = storedTheme ? storedTheme : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                document.documentElement.setAttribute('data-theme', theme);
+            } catch (e) {}
+
+            // Detecção prévia de idioma para visitantes internacionais
+            try {
+                var urlParams = new URLSearchParams(window.location.search);
+                var langParam = (urlParams.get('lang') || '').toLowerCase();
+                var storedLang = localStorage.getItem('preferred_language');
+                var activeLang = 'pt';
+
+                if (['pt', 'en', 'es'].indexOf(langParam) !== -1) {
+                    activeLang = langParam;
+                } else if (['pt', 'en', 'es'].indexOf(storedLang) !== -1) {
+                    activeLang = storedLang;
+                } else {
+                    var navLangs = navigator.languages || [navigator.language || navigator.userLanguage || ''];
+                    for (var i = 0; i < navLangs.length; i++) {
+                        var l = (navLangs[i] || '').toLowerCase();
+                        if (l.indexOf('pt') === 0) { activeLang = 'pt'; break; }
+                        if (l.indexOf('es') === 0) { activeLang = 'es'; break; }
+                        if (l.indexOf('en') === 0) { activeLang = 'en'; break; }
+                    }
+                    if (['pt', 'es'].indexOf(activeLang) === -1) {
+                        activeLang = 'en';
+                    }
+                }
+                var htmlLangMap = { pt: 'pt-BR', en: 'en', es: 'es' };
+                document.documentElement.lang = htmlLangMap[activeLang] || 'pt-BR';
+            } catch (e) {}
+        })();
+    </script>
+</head>
+
+<body>
+    <!-- Top Minimal Navigation -->
+    <header id="header-nav">
+        <div class="nav-container">
+            <a href="index.html" class="logo-nav" id="brand-logo" aria-label="Ruben Massuquetto - Ir para o início" data-i18n-aria="nav.brandAria">
+                <span class="logo-main-text">
+                    Massuquetto
+                    <span class="logo-accent-dot"></span>
+                </span>
+            </a>
+            
+            <nav id="main-menu" aria-label="Navegação Principal">
+                <ul>
+                    <li><a href="index.html#hero" data-i18n="nav.home">Início</a></li>
+                    <li><a href="index.html#servicos" data-i18n="nav.solutions">Nossas Soluções</a></li>
+                    <li><a href="index.html#como-funciona" data-i18n="nav.howItWorks">Como Funciona</a></li>
+                    <li><a href="index.html#projetos" data-i18n="nav.demos">Demonstrações</a></li>
+                    <li><a href="index.html#contato" data-i18n="nav.diagnostic">Diagnóstico</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Seletor Nativo de Idioma em Lista (Bolinha Circular com Abreviatura + Dropdown) -->
+                <div class="lang-dropdown-wrapper" id="lang-dropdown-wrapper">
+                    <button type="button" 
+                            class="lang-circle-btn" 
+                            id="lang-dropdown-btn" 
+                            aria-expanded="false" 
+                            aria-haspopup="listbox" 
+                            aria-label="Selecionar Idioma" 
+                            title="Selecionar Idioma / Language">
+                        <span class="lang-current-code" id="lang-current-code">PT</span>
+                    </button>
+                    <div class="lang-dropdown-menu" id="lang-dropdown-menu" role="listbox" aria-label="Idiomas disponíveis">
+                        <div class="lang-dropdown-item" role="option" data-lang="pt" aria-selected="true">
+                            <span class="lang-item-name">Português (BR)</span>
+                            <span class="lang-item-badge">PT</span>
+                        </div>
+                        <div class="lang-dropdown-item" role="option" data-lang="en" aria-selected="false">
+                            <span class="lang-item-name">English</span>
+                            <span class="lang-item-badge">EN</span>
+                        </div>
+                        <div class="lang-dropdown-item" role="option" data-lang="es" aria-selected="false">
+                            <span class="lang-item-name">Español</span>
+                            <span class="lang-item-badge">ES</span>
+                        </div>
+                    </div>
+                </div>
+
+                <button id="theme-toggle" class="theme-btn" aria-label="Alternar tema de cores (claro / escuro)" title="Alternar Tema">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="projetos-page-main">
+        <section id="projetos" style="border-top: none;">
+            <div class="container" style="max-width: 900px;">
+                <div class="section-header fade-in-section" style="text-align: left; margin-bottom: 40px;">
+                    <a href="index.html" class="projetos-back-link">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="19" y1="12" x2="5" y2="12"></line>
+                            <polyline points="12 19 5 12 12 5"></polyline>
+                        </svg>
+                        <span data-i18n="projetosPage.backLink">Voltar para Página Inicial</span>
+                    </a>
+                    <br>
+                    <span class="section-tag" data-i18n="contact.lgpdText" style="margin-top: 15px; display: inline-block;">COMPROMISSO COM A PRIVACIDADE</span>
+                    <h1 class="section-title" data-i18n="privacidadePage.title" style="font-size: 2.25rem; line-height: 1.2; margin-top: 15px; margin-bottom: 20px;">
+                        Privacidade, Transparência & Conformidade Digital
+                    </h1>
+                    <p class="section-subtitle" data-i18n="privacidadePage.subtitle" style="font-size: 1rem; color: #9ca3af; max-width: 100%; margin-bottom: 0;">
+                        Compromisso permanente com a segurança da informação, conformidade com a LGPD/GDPR, rastreamento ético de dados e as melhores práticas de SEO técnico e relevância na web.
+                    </p>
+                </div>
+
+                <!-- Conteúdo da Política em Linha / Blocos Bento Estilizados -->
+                <div class="privacy-content-blocks" style="display: flex; flex-direction: column; gap: 32px; margin-bottom: 60px;">
+                    
+                    <!-- Bloco 1: Relevância -->
+                    <div class="bento-card" style="padding: 32px; border-radius: 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-align: left;">
+                        <h2 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; color: var(--accent-neon); margin-bottom: 16px;" data-i18n="privacidadePage.section1Title">
+                            1. Relevância, Utilidade & E-E-A-T
+                        </h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.9375rem; line-height: 1.6; color: #9ca3af; margin-bottom: 20px;" data-i18n="privacidadePage.section1Text1">
+                            Atualmente, os buscadores priorizam a experiência real do usuário e a utilidade prática do conteúdo. Nosso ecossistema de vendas é estruturado sob as seguintes premissas:
+                        </p>
+                        <ul style="display: flex; flex-direction: column; gap: 14px; list-style: none; padding-left: 0; margin: 0;">
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section1Item1">Conteúdo com E-E-A-T e Information Gain: Experiência, Especialidade, Autoridade e Confiabilidade. Desenvolvemos soluções com conhecimento prático real e valor agregado exclusivo para que o conteúdo traga um ganho real de informação (Information Gain), evitando cópias genéricas.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section1Item2">Velocidade e Responsividade Ultra-alta: Carregamento instantâneo com foco em mobile. Reduzimos atritos, otimizamos imagens e servimos arquivos estáticos ultrarrápidos para manter o melhor tempo de resposta a interações (INP).</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section1Item3">Design Direto, Limpo e Acessível: Foco absoluto em conversão sem poluição visual ou anúncios intrusivos. Arquitetura intuitiva de links que guia o usuário com fluidez.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloco 2: Indexação -->
+                    <div class="bento-card" style="padding: 32px; border-radius: 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-align: left;">
+                        <h2 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; color: var(--accent-neon); margin-bottom: 16px;" data-i18n="privacidadePage.section2Title">
+                            2. SEO Técnico & Indexação Ativa
+                        </h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.9375rem; line-height: 1.6; color: #9ca3af; margin-bottom: 20px;" data-i18n="privacidadePage.section2Text1">
+                            A indexação garante que o Google e outros motores de busca compreendam e cataloguem as páginas para exibi-las em termos de busca de alta intenção comercial:
+                        </p>
+                        <ul style="display: flex; flex-direction: column; gap: 14px; list-style: none; padding-left: 0; margin: 0;">
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section2Item1">Google Search Console: Propriedade e sitemaps devidamente autenticados, monitorando ativamente erros de rastreamento e otimizando a cobertura de busca das páginas.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section2Item2">Sitemaps e Robots Dinâmicos: Geração automatizada de rotas e sitemaps estruturados para facilitar a varredura e leitura dos robôs.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section2Item3">URLs Amigáveis e HTTPS: Estruturas de link totalmente limpas e encriptação SSL ponta-a-ponta, prevenindo perdas de ranqueamento de segurança.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloco 3: Rastreio -->
+                    <div class="bento-card" style="padding: 32px; border-radius: 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-align: left;">
+                        <h2 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; color: var(--accent-neon); margin-bottom: 16px;" data-i18n="privacidadePage.section3Title">
+                            3. Monitoramento Ético & Rastreabilidade
+                        </h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.9375rem; line-height: 1.6; color: #9ca3af; margin-bottom: 20px;" data-i18n="privacidadePage.section3Text1">
+                            Utilizamos tecnologias modernas e integradas para mensurar a jornada do usuário e otimizar campanhas de tráfego de maneira estritamente anônima e transparente:
+                        </p>
+                        <ul style="display: flex; flex-direction: column; gap: 14px; list-style: none; padding-left: 0; margin: 0;">
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section3Item1">Google Analytics 4 (GA4): Compreensão aprofundada de comportamento de páginas, origens de tráfego e taxas de engajamento prático.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section3Item2">Google Tag Manager (GTM): Central de gerenciamento seguro que reduz injeções diretas de scripts e acelera a performance da página.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section3Item3">Pixels de Conversão & Remarketing: Integração profissional com Meta Pixel (Facebook & Instagram Ads) e Google Ads Tag para atribuição de conversões de leads.</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Bloco 4: LGPD -->
+                    <div class="bento-card" style="padding: 32px; border-radius: 14px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); text-align: left;">
+                        <h2 style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 700; color: var(--accent-neon); margin-bottom: 16px;" data-i18n="privacidadePage.section4Title">
+                            4. Conformidade Jurídica (LGPD & GDPR)
+                        </h2>
+                        <p style="font-family: var(--font-sans); font-size: 0.9375rem; line-height: 1.6; color: #9ca3af; margin-bottom: 20px;" data-i18n="privacidadePage.section4Text1">
+                            O tratamento de dados respeita as premissas rígidas da Lei Geral de Proteção de Dados (Lei nº 13.709/2018):
+                        </p>
+                        <ul style="display: flex; flex-direction: column; gap: 14px; list-style: none; padding-left: 0; margin: 0; margin-bottom: 24px;">
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section4Item1">Banner de Consentimento (Opt-in Ativo): Os scripts de rastreamento só são disparados após o consentimento explícito do usuário, respeitando a privacidade por padrão.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section4Item2">Consentimento nos Formulários: Caixas de seleção não marcadas por padrão, garantindo que o visitante ativamente concorde com a coleta antes do envio de leads.</span>
+                            </li>
+                            <li style="display: flex; align-items: flex-start; gap: 12px; font-family: var(--font-sans); font-size: 0.875rem; line-height: 1.5; color: #e5e7eb;">
+                                <span style="color: var(--accent-neon); font-weight: bold; margin-top: 2px;">•</span>
+                                <span data-i18n="privacidadePage.section4Item3">Canal Oficial do Encarregado (DPO): Para dúvidas sobre seus dados ou para solicitar a exclusão total das suas informações da nossa base, disponibilizamos o e-mail de contato oficial do encarregado de dados (DPO): contato@rubenmassuquetto.com</span>
+                            </li>
+                        </ul>
+                        <div style="background: rgba(0, 245, 155, 0.05); border: 1px solid rgba(0, 245, 155, 0.2); border-radius: 8px; padding: 16px; font-family: var(--font-mono); font-size: 0.8125rem; color: var(--accent-neon); text-align: center;">
+                            DPO E-mail: <a href="mailto:contato@rubenmassuquetto.com" style="color: #ffffff; text-decoration: underline;">contato@rubenmassuquetto.com</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo" data-i18n="footer.logo">
+                Ruben Massuquetto · Ecossistema de Vendas Locais
+            </div>
+            <div class="footer-links-row">
+                <a href="index.html#hero" data-i18n="footer.home">Início</a>
+                <a href="index.html#servicos" data-i18n="footer.solutions">Soluções Sob Medida</a>
+                <a href="index.html#como-funciona" data-i18n="footer.howItWorks">Como Funciona</a>
+                <a href="index.html#projetos" data-i18n="footer.demos">Demonstrações Ativas</a>
+                <a href="index.html#contato" data-i18n="footer.contact">Solicitar Diagnóstico</a>
+                <a href="privacidade.html" style="color: var(--accent-neon); font-weight: 600;" data-i18n="contact.consentLink">Política de Privacidade</a>
+                <a href="https://wa.me/5541997775319" target="_blank" rel="noopener noreferrer" data-i18n="footer.whatsapp">WhatsApp</a>
+            </div>
+            <p class="footer-copy" data-i18n="footer.copy">
+                © 2026 Ruben Massuquetto | Todos os direitos reservados · Estratégias sob medida para empresas locais.
+            </p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE PERSISTENTE DO WHATSAPP ("Falar com Especialista") -->
+    <a href="https://wa.me/5541997775319?text=Ol%C3%A1%20Ruben!%20Gostaria%20de%20falar%20com%20o%20especialista%20sobre%20um%20diagn%C3%B3stico%20de%20vendas%20para%20minha%20empresa."
+        class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Falar com Especialista no WhatsApp" id="whatsapp-floating-cta">
+        <span class="whatsapp-icon-circle">
+            <svg viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+            </svg>
+        </span>
+        <span class="whatsapp-float-label" data-i18n="floatingWpp.label">Falar com Especialista</span>
+        <span class="whatsapp-pulse-beacon"></span>
+    </a>
+
+    <!-- Scripts -->
+    <script src="./script.js" defer></script>
+</body>
+
+</html>
