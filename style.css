@@ -89,19 +89,19 @@
   --border-active: #059669;
   
   /* Tipografia escura de alto contraste (WCAG AAA) */
-  --text-primary: #0f172a;
-  --text-secondary: #334155;
-  --text-muted: #475569;
-  --text-highlight: #0284c7;
+  --text-primary: #000000;
+  --text-secondary: #000000;
+  --text-muted: #1e293b;
+  --text-highlight: #16a34a;
   
   /* Cores Vivas, Fortes e Enérgicas */
-  --accent-neon: #059669;
-  --accent-neon-dim: #ecfdf5;
-  --accent-neon-glow: rgba(5, 150, 105, 0.28);
+  --accent-neon: #16a34a;
+  --accent-neon-dim: #f0fdf4;
+  --accent-neon-glow: rgba(22, 163, 74, 0.28);
 
-  --accent-emerald: #059669;
-  --accent-emerald-dim: #ecfdf5;
-  --accent-emerald-glow: rgba(5, 150, 105, 0.28);
+  --accent-emerald: #16a34a;
+  --accent-emerald-dim: #f0fdf4;
+  --accent-emerald-glow: rgba(22, 163, 74, 0.28);
 
   --accent-gold: #d97706;
   --accent-gold-light: #b45309;
@@ -216,6 +216,71 @@
   background: #ffffff;
   border: 1.5px solid #cbd5e1;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05), 0 10px 24px -4px rgba(15, 23, 42, 0.08);
+}
+
+/* Correções estritas de contraste para evitar aspecto apagado ou lavado no modo claro */
+[data-theme="light"] section#projetos {
+  background-color: #f8fafc !important; /* Fundo suavemente contrastado com os cards brancos */
+}
+
+[data-theme="light"] section#projetos .section-subtitle {
+  color: #0f172a !important; /* Preto profundo! */
+  font-weight: 500 !important; /* Levemente mais robusto */
+}
+
+[data-theme="light"] section#projetos .bento-card {
+  background: #ffffff !important;
+  border: 1.8px solid #0f172a !important; /* Borda preta sólida super premium! */
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.12) !important; /* Sombra nítida */
+}
+
+[data-theme="light"] section#projetos .bento-card .project-title {
+  color: #0f172a !important;
+  font-weight: 900 !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .project-description {
+  color: #0f172a !important; /* Preto profundo! */
+  font-weight: 500 !important; /* Aumenta a legibilidade */
+}
+
+[data-theme="light"] section#projetos .bento-card ul li,
+[data-theme="light"] section#projetos .bento-card ul li span {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .btn-project-live {
+  background: #ffffff !important;
+  border: 1.8px solid #0f172a !important; /* Borda preta de altíssima definição! */
+  color: #0f172a !important;
+  font-weight: 800 !important; /* Texto super legível e em negrito! */
+}
+
+[data-theme="light"] section#projetos .bento-card .btn-project-live:hover {
+  background: #0f172a !important; /* Efeito hover invertido de altíssimo luxo! */
+  color: #ffffff !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .btn-project-adapt {
+  background: #16a34a !important; /* Verde mais vivo e brilhante! */
+  border: 1.8px solid #15803d !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .btn-project-adapt:hover {
+  background: #15803d !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .preview-browser-bar {
+  background: #0f172a !important; /* Barra de navegador preta sólida */
+  border-bottom: 1.8px solid #0f172a !important;
+}
+
+[data-theme="light"] section#projetos .bento-card .browser-url-pill {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  font-weight: 700 !important;
 }
 
 [data-theme="light"] .bento-card:hover,
@@ -361,16 +426,16 @@
 }
 
 [data-theme="light"] .btn-project-live {
-  background: #f1f5f9;
-  border: 1.5px solid #cbd5e1;
+  background: #ffffff;
+  border: 1.8px solid #0f172a;
   color: #0f172a;
-  font-weight: 600;
+  font-weight: 800;
 }
 
 [data-theme="light"] .btn-project-live:hover {
-  background: #ffffff;
-  border-color: #059669;
-  color: #059669;
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
 }
 
 [data-theme="light"] .btn-card-service {
@@ -3959,5 +4024,38 @@ header.is-menu-open {
     text-align: center;
     padding: 12px;
   }
+}
+
+/* ==========================================================================
+   CONFORMIDADE E PRIVACIDADE - ALTO CONTRASTE MODO CLARO
+   ========================================================================== */
+[data-theme="light"] .privacy-content-blocks .bento-card {
+  background: #ffffff !important;
+  border: 1.8px solid #000000 !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+}
+
+[data-theme="light"] .privacy-content-blocks h2 {
+  color: #16a34a !important; /* Verde Vivo de Alto Contraste */
+  font-weight: 800 !important;
+}
+
+[data-theme="light"] .privacy-content-blocks p,
+[data-theme="light"] .privacy-content-blocks li,
+[data-theme="light"] .privacy-content-blocks span:not(.section-tag) {
+  color: #000000 !important; /* Fonte 100% preta corporativa no modo claro */
+  font-weight: 500 !important;
+}
+
+[data-theme="light"] .privacy-content-blocks div[style*="background: rgba(0, 245, 155, 0.05)"] {
+  background: #f0fdf4 !important; /* Fundo verde claro de alta definição */
+  border: 1.8px solid #16a34a !important; /* Borda verde viva */
+  color: #000000 !important; /* Texto preto */
+}
+
+[data-theme="light"] .privacy-content-blocks div[style*="background: rgba(0, 245, 155, 0.05)"] a {
+  color: #16a34a !important; /* Verde Vivo para o link do DPO */
+  font-weight: 800 !important;
+  text-decoration: underline !important;
 }
 

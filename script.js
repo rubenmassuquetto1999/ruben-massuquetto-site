@@ -175,12 +175,12 @@ function renderProjects(projects, container) {
             </div>
 
             <!-- 3. Descrição do projeto traduzida no idioma ativo -->
-            <p class="project-description" data-repo-desc="${slug}">${description}</p>
+            <p class="project-description" data-repo-desc="${slug}" style="color: var(--text-primary) !important; font-weight: 500 !important; line-height: 1.6 !important;">${description}</p>
 
             <!-- 4. Botões empilhados: botão em cima para ver projeto no ar e logo abaixo outro botão para adaptar soluções -->
             <div class="project-action-buttons">
-                <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-project btn-project-live" title="${liveText}">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <a href="${liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-card-project btn-project-live" title="${liveText}" style="background: var(--bg-surface) !important; border: 2px solid var(--text-primary) !important; color: var(--text-primary) !important; font-weight: 800 !important; box-shadow: 0 4px 10px rgba(0,0,0,0.05) !important;">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <circle cx="12" cy="12" r="10"></circle>
                         <polygon points="10 8 16 12 10 16 10 8"></polygon>
                     </svg>
