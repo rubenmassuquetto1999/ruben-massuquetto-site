@@ -2,6 +2,11 @@
 
 > Ruben Massuquetto é desenvolvedor web e consultor de engenharia de vendas locais, focado em posicionar empresas no topo do Google, Google Maps (Google Meu Negócio), anúncios de tráfego pago (Google Ads e Meta Ads) e otimização para motores de resposta com Inteligência Artificial (GEO/LLMO).
 
+## Páginas Principais
+- [Página Inicial](https://www.rubenmassuquetto.com/): Portfólio oficial de Ruben Massuquetto com serviços de tráfego pago, SEO local, criação de sites e engenharia de busca.
+- [Projetos e Demonstrações](https://www.rubenmassuquetto.com/projetos.html): Relação completa de sistemas, landing pages e ferramentas reais em funcionamento desenvolvidas sob medida para negócios.
+- [Política de Privacidade](https://www.rubenmassuquetto.com/privacidade.html): Detalhes de conformidade com a LGPD, privacidade, monitoramento ético e diretrizes de rastreabilidade.
+
 ## Informações Gerais
 - Especialista: Ruben Massuquetto
 - E-mail: contato@rubenmassuquetto.com

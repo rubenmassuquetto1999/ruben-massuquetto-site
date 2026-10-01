@@ -256,11 +256,21 @@ app.get('/home', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Serve screenshots from assets/screenshots
-app.use('/screenshots', express.static(path.join(__dirname, 'assets', 'screenshots')));
+// Serve screenshots and static directory files with optimal cache-control headers
+const staticOptions = {
+  maxAge: '30d',
+  setHeaders: (res, filepath) => {
+    const ext = path.extname(filepath).toLowerCase();
+    if (filepath.endsWith('.html') || ext === '.html') {
+      res.setHeader('Cache-Control', 'public, max-age=0, must-revalidate');
+    } else if (['.js', '.css', '.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp', '.ico', '.woff', '.woff2', '.pdf'].includes(ext)) {
+      res.setHeader('Cache-Control', 'public, max-age=2592000, immutable');
+    }
+  }
+};
 
-// Serve static directory files
-app.use(express.static(__dirname));
+app.use('/screenshots', express.static(path.join(__dirname, 'assets', 'screenshots'), staticOptions));
+app.use(express.static(__dirname, staticOptions));
 
 // Fallback for SPA/direct navigation
 app.get('*', (req, res) => {
